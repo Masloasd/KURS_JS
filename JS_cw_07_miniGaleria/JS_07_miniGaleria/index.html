@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+	<head>
+		<title>mini galeria</title>
+		<meta charset="utf-8" />
+        <link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+        <script>
+            function p1(){
+                document.getElementById("present").innerHTML=
+                    '<img src="p1.jpg" alt="" />';
+            }
+            function p2(){
+                document.getElementById("present").innerHTML=
+                    '<img src="p2.jpg" alt="" />';
+            }
+            function p3(){
+                document.getElementById("present").innerHTML=
+                    '<img src="p3.jpg" alt="" />';
+            }
+        </script>
+        <div id="kontener">
+            <div class="pic" id="p1" onclick="p1()"></div>
+            <div class="pic" id="p2" onclick="p2()"></div>
+            <div class="pic" id="p3" onclick="p3()"></div>
+            <div id="present" ></div>
+        </div>
+	</body>
+</html>

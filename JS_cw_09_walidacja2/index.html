@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>walidacja</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript" src="waliduj.js"></script>
+  </head>
+  <body>
+    <!-- hasło musi zawierać minimum 3 znaki oraz minimum jedną literę -->
+    <h1>Zamówienie</h1>  
+    <form action="plik.html" method="POST" onsubmit="return sprawdz(this);">
+      <select id="sprzet">
+        <option value="1"></option>
+        <option value="2">Dysk twardy</option>
+        <option value="3">Pamięć RAM</option>
+        <option value="4">Myszka komputerowa</option>
+      </select>
+      <select id="kolor">
+        <option value="1"></option>
+        <option value="2">Różowy</option>
+        <option value="3">Biały</option>
+        <option value="4">Czarny</option>
+      </select>
+      <br />
+      <input type="checkbox" id="regulamin" value="1" />Czy zkceptujesz regulamin?<br />
+      <input type="submit" value="Wyślij zamówienie" />
+    </form>
+      <p id="wynik"></p>
+  </body>
+</html>

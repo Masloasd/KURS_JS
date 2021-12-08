@@ -1,0 +1,14 @@
+body{
+	background-color: #023517;
+	color:red;
+}
+#kolor{
+	width: 200px;
+	height: 200px;
+	float: left;
+	background-color: white;
+}
+#rgb{
+	padding-left: 20px;
+	float: left;
+}

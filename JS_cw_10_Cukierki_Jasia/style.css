@@ -1,0 +1,12 @@
+body{
+	background-color: #888888;
+	color: #000000;
+    font-family: Arial;
+    font-size: 30px;
+}
+#wynik{
+    color: white;
+}
+input{
+    font-size: 30px;
+}

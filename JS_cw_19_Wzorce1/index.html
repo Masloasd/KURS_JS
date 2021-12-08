@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>wzorce</title>
+		<link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <script>
+            /*
+            ^ - początek wzorca
+            $ - koniec wzorca
+            . - dowolny pojedyńczy znak
+            [...] - dowolny z wymienionych znaków np. [a-z]
+            {3} - trzy poprzedzające znaki np [0-9]{3} - 018
+            {3,} - przynajmniej trzy poprzedzające znaki
+            {2,8} - od 2 do 8 poprzedzających znaków
+            \. znak kropki
+            i - nie uwzględniaj wielkości liter
+            \s - spacja
+            var kod_wzorzec = ': /^[0-9]{2}-[0-9]{3}$/;
+            var nazwisko = ':/^[a-zA-Z]{2,}\s+[a-zA-Z]{2,}&/i;
+            var email = ': /^[0-9a-zA-Z_.-]+@[0-9a-zA-Z_.-]+\.[0-9a-zA-Z]{2,3};
+            */
+        </script>
+        <form name="form1" method="post" action="plik.html">
+            <i id="Kod_Komunikat">Wpisz kod pocztowy w formacie: 11-222 </i>
+            <input type="text" name="kod_pole" /> <br />
+            <input type="submit" id="Przycisk" value="Sprawdź" />
+        </form>
+        <script>
+            var kod_wzorzec =  /^[0-9]{2}-[0-9]{3}$/;
+            var kod_komunikat = document.getElementById("Kod_Komunikat");
+            var form_sprawdz = document.getElementById("Przycisk");
+            form_sprawdz.onclick = fun_wzorzec;
+            function fun_wzorzec() {
+                var kod = document.form1.kod_pole.value;
+                // var kod = document.forms["form1"]["kod_pole"].value; // zamiennie
+                if (kod == null || kod == "") {
+                    form1.kod_pole.focus();
+                    kod_komunikat.innerHTML = "Brak kodu";
+                    return false;
+                } else if (!kod_wzorzec.test(kod)) {
+                    kod_komunikat.innerHTML = "Kod niepoprawny";
+                    form1.kod_pole.focus();
+                    return false;
+                };
+                return true;
+            };
+        </script>
+    </body>
+</html>

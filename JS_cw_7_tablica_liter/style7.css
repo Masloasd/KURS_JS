@@ -1,0 +1,29 @@
+body{
+	background-color: #000000;
+	color: #ffffff;
+}
+#alfabet{
+    width: 900px;
+    margin: 15px;
+    font-size: 30px;
+    margin: 15px;
+    margin:auto;
+}
+.literka{
+    width: 40px;
+    height: 40px;
+    border: solid 3px green;
+    border-radius: 20px;
+    float:left;
+    text-align: center;
+    padding-top: 10px;
+    margin: 8px;
+}
+.literka:hover{
+    background-color: green;
+    border: dashed 3px black;
+    color: black;
+}
+.czysc{
+    clear: both;
+}

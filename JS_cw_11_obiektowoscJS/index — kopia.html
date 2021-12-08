@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Obiektowosc</title>
+		<link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <script>
+            document.write(navigator.appVersion+" "+navigator.appName+"<br />")
+            //sposób 1
+            var obiekt={
+                imie:"Krzysztof",
+                nazwisko:"Czyż"
+                };
+            document.write(obiekt.imie+" "+obiekt.nazwisko+"<br />");
+            
+            //sposób 2 - konstruktor - przy użyciu funkcji Object()
+            var osoba = new Object();
+            osoba.imie="Kris";
+            osoba.nazwisko="Lee";
+            document.write(osoba.imie+" "+osoba.nazwisko+"<br />");
+            
+            //sposob 3 - za pomocą własnej funkcji, nazwy obiektu i metody
+            //def. metody
+            function pokazPojazd(){
+                document.write(autoOsobowe.marka+"<br /> ");
+                document.write(autoOsobowe.model+"<br /> ");
+                document.write(autoOsobowe.rocznik+"<br /> ");
+                document.write(autoOsobowe.kolor+"<br /> ");
+            }
+            //def. obiektu //funckcja konstruująca
+            function autosalon(marka,model,rocznik,kolor){
+                this.marka=marka;
+                this.model=model;
+                this.rocznik=rocznik;
+                this.kolor=kolor;
+                this.pokazPojazd=pokazPojazd;//funkcja pokazPojazd() bedzie metodą obiektu
+            };
+            //uzycie konstruktora
+            var autoOsobowe = new autosalon("Fiat","Punto",2012,"Szary");
+            pokazPojazd();
+            autoOsobowe = new autosalon("Opel","Insignia",2018,"Zielony");
+            pokazPojazd();
+        </script>
+    </body>
+</html>

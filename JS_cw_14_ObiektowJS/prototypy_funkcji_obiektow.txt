@@ -1,0 +1,34 @@
+function Punkt(x,y){
+    this.x=x;
+    this.y=y;
+}
+function Odcinek1(p1,p2){
+    this.p1=p1;
+    this.p2=p2;
+}
+function Odcinek2(p2,p3){
+    this.p3=p3;
+    this.p2=p2;
+}
+function Odcinek3(p3,p1){
+    this.p1=p1;
+    this.p3=p3;
+}
+var p1 = new Punkt(0,0);
+var p2 = new Punkt(10,10);
+var p3 = new Punkt(5,-5);
+var ab = new Odcinek1(p1,p2);
+var bc = new Odcinek2(p2,p3);
+var ca = new Odcinek3(p3,p1);
+Punkt.prototype.wspolrzedne = function(){
+    console.log("X: "+this.x+" ; Y: "+this.y);
+}
+Punkt.prototype.wyglad = function(){
+    console.log("P("+this.x+","+this.y+")");
+}
+Odcinek1.prototype.dlugosc = function(){
+    var x1x2=this.p2.x-this.p1.x;
+    var y1y2=this.p2.y-this.p1.y;
+    var dl_p1p2=Math.sqrt(Math.pow(x1x2,2)+Math.pow(y1y2,2));
+    console.log("Odległość między punktami P1 i P2 wynosi: " + dl_p1p2);
+}

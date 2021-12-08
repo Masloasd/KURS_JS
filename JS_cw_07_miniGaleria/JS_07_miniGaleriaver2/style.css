@@ -1,0 +1,99 @@
+body{
+	margin-top:10px;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+	width:100%;
+    background-color: #808080;
+}
+#kontener {
+    background-color: #cccccc;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#gorny {
+    background-color: #abcdef;
+    height: 60%;
+}
+#srodek {
+    background-color: #123456;
+}
+#dolny {
+    background-color: #789abc;
+}
+#g1 {
+    background-color: #ffd800;
+    float:left;
+    width: 20%;
+}
+#g2 {
+    background-color: #ffd888;
+    float: left;
+    width: 20%;
+}
+#g3 {
+    background-color: #ffd8aa;
+    float: left;
+    width: 20%;
+}
+#g4 {
+    background-color: #ffaaaa;
+    float: left;
+    width: 20%;
+}#g5 {
+    background-color: #ff00aa;
+    float: left;
+    width: 20%;
+}
+#s1 {
+    background-color: #ffaa00;
+    float: left;
+    width: 20%;
+}
+#s2 {
+    width:60%;
+    float: left;
+}
+#s3 {
+    background-color: #ccd800;
+    float: left;
+    width: 20%;
+}
+#d1 {
+    background-color: #ff0000;
+    float: left;
+    width: 20%;
+}
+#d2 {
+    background-color: #00d800;
+    float: left;
+    width: 20%;
+}
+#d3 {
+    background-color: #ffd8ff;
+    float: left;
+    width: 20%;
+}
+#d4 {
+    background-color: #00d8ff;
+    float: left;
+    width: 20%;
+}
+#d5 {
+    background-color: #ffffff;
+    float: left;
+    width: 20%;
+}
+.czysc {
+    clear: both;
+    width: 20%;
+}
+img{
+    width:100%;
+    height:120px;
+}
+#s2 img{
+    width: 100%;
+    height: 360px;
+}

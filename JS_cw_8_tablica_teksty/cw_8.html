@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>JS ćw.8</title>
+		<link rel="stylesheet" href="style8.css" />
+    </head>
+    <body>
+        <script>
+            var tekst="Witaj w moim Świecie !!!";
+            tekst=tekst.toUpperCase();//transform na Big text
+            var dl_tekstu=tekst.length;
+            var napis="";
+            for(var i=0;i<dl_tekstu;i++){
+                if(tekst.charAt(i)==" "){
+                   napis=napis+" ";
+                } else {
+                    napis=napis+"*";
+                }
+            }
+            function pokaz_tekst(){
+                document.getElementById("wynik1").innerHTML=tekst;
+                document.getElementById("wynik2").innerHTML=napis;
+            }
+            window.onload = pokaz_tekst;//bez nawiasów funkcji - ładuje funkcję
+        </script>
+        <div id="wynik1"></div>	   
+        <div id="wynik2"></div>	   
+    </body>
+</html>

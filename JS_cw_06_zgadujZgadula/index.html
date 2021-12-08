@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+	<head>
+		<title>szablon</title>
+		<meta charset="utf-8" />
+        <link rel="stylesheet" href="style.css" />
+        <script>
+            function witaj(){
+                napis="Witaj.<br />Właśnie została uruchomiona przez Ciebie najfajniejsza gra na świecie<br />spróbuj jak naj szybciej odgadnąć wylosowaną przeze mnie liczbę całkowitą z zakresu 0..100";
+                napis = napis.toUpperCase();
+                document.getElementById("powitanie").innerHTML=napis;
+            }
+            var losowana = Math.round((100*Math.random()),0);
+            var licznik=1;
+            function zgaduj(){
+                var x=document.getElementById("numer").value;
+                if(x>losowana){
+                    document.getElementById("gra").innerHTML="Twoja liczba jest za duża";
+                } else if (x<losowana){
+                    document.getElementById("gra").innerHTML="Twoja liczba jest za mała";
+                } else {
+                    napis = "Brawo. Udało ci się odgadnąć za "+licznik+" razem!!!";
+                document.getElementById("gra").innerHTML=napis;
+                }
+                licznik++;
+            }
+            while(x!=losowana){
+                zgaduj();
+            }
+        </script>
+	</head>
+	<body>
+        <div id="powitanie"></div>
+        <script>
+            //drugi sposob ładowania funkcji - zakomentować tutaj funkcję
+            //window.onload=witaj;
+            witaj();
+        </script>
+        <div id="kontener">
+            <div id="los">
+                Twoja liczba: <input type="number" id="numer" /><br />
+                <input type="submit" value="Typuj" onclick="zgaduj()" />
+            </div>
+            <div id="gra"></div>
+        </div>
+	</body>
+</html>
+

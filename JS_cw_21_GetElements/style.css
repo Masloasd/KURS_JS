@@ -1,0 +1,14 @@
+body{
+	margin-top:10px;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+	width:100%;
+    background-color: gray;
+}
+.level1{
+    color:yellow;
+}
+.level2{
+    padding-left: 20px;
+}

@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+	<head>
+		<title>szablon</title>
+		<meta charset="utf-8" />
+         <link rel="stylesheet" href="style.css" />
+         <script type="text/javascript" src="skrypt.js"></script>
+        
+</head>
+	<body>
+        Podaj wartości dziesiętne kolorów RGB dla przycisku: <br />
+        <form method="POST" onsubmit="return kolor(this);">
+            R: <input type="number" id="r" name="PHP" /><br />
+            G: <input type="number" id="g"  name="1"/><br />
+            B: <input type="number" id="b"  name="2" /><br />
+            <div id="but">
+                <button type="submit">Zmień kolor</button><br />
+            </div>
+            <div id="wynik"></div>
+        </form>
+    </body>
+</html>
+

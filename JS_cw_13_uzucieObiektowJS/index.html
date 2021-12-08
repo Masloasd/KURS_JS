@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Zamówienie auta</title>
+		<link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <script>
+            function pojazd(){
+                auto.marka;
+                auto.model;
+                auto.rocznik;
+                auto.kolor;
+            }
+            function salon(marka,model,rocznik,kolor){
+                this.marka=marka;
+                this.model=model;
+                this.rocznik=rocznik;
+                this.kolor=kolor;
+                this.pojazd=pojazd;
+            }                
+            function zamow(){
+                 var x = document.getElementById("wyborMarki").value;
+                 var y = document.getElementById("wyborModelu").value;
+                 var z = document.getElementById("wyborRoku").value;
+                 var w = document.getElementById("wyborKoloru").value;
+                 var auto = new salon(x,y,z,w);
+                wynik=auto.marka+" "+auto.model+" "+auto.rocznik+" "+auto.kolor;
+                document.getElementById("wynik").innerHTML=wynik;   
+            }
+        </script>
+        <form>
+            Wybierz dane samochodu:
+            <select id="wyborMarki">
+                <option>Fiat</option>
+                <option>Opel</option>
+                <option>Mitsubishi</option>
+            </select>
+            <select id="wyborModelu">
+                <option>Coupe</option>
+                <option>Cabrio</option>
+                <option>Pickup</option>
+            </select>
+            <select id="wyborRoku">
+                <option>2019</option>
+                <option>2020</option>
+                <option>2021</option>
+            </select>
+            <select id="wyborKoloru">
+                <option>Szary</option>
+                <option>Biały</option>
+                <option>Czarny</option>
+                <option>Czerwony</option>
+                <option>Zielony</option>
+                <option>Niebieski</option>
+            </select>
+            <input type="reset" value="Wyczyść wybór" />
+        </form>
+        <input type="submit" value="Złóż zamówienie" onclick="zamow()" />
+        <div id="wynik"></div>
+    </body>
+</html>

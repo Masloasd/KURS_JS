@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Jasiu</title>
+		<link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <center><h2>Cukierki urodzinowe Jasia</h2></center>
+        <script>
+            function oblicz(){
+                var cukierki;
+                var pani;
+                var chlopcy;
+                var klasa;
+                var dziewczyny;
+                var jasiu=1;
+                klasa=document.getElementById("klasa").value*1;
+                pani=document.getElementById("pani").value*1;
+                chlopcy=document.getElementById("chlopcy").value*1;
+                cukierki=document.getElementById("cukierki").value*1;
+                dziewczyny=klasa-chlopcy; 
+                let minimum = (dziewczyny+(chlopcy+1)+pani+jasiu);
+                let uczniowie=klasa-jasiu;
+                let wynik=(cukierki-minimum)%uczniowie;
+                document.getElementById("wynik").innerHTML = wynik;
+            }
+        </script>
+        
+        Podaj ilość uczniów w klasie Jasia: 
+            <input type="number" id="klasa" /><br /><br />
+        Ile cukierków ma dostać Pani Jasia? 
+            <input type="number" id="pani" /><br /><br />
+        Ilu chłopców jest w klasie Jasia? 
+            <input type="number" id="chlopcy" /> <br /><br />
+        Ile cukierków Jasiu ma do rozdania? 
+            <input type="number" id="cukierki" /><br /><br />
+        <input type="submit" value="Oblicz ile cukierków zostanie dla Jasia" onclick="oblicz()" />
+        <div id="wynik"></div>
+    </body>
+</html>

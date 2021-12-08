@@ -1,0 +1,9 @@
+body{
+	background-color: #888888;
+	color: #000000;
+    font-family: Arial;
+    font-size: 20px;
+}
+input, select{
+    font-size: 20px;;
+}

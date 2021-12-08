@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>JS ćw.7</title>
+		<link rel="stylesheet" href="style.css" />
+        <script>
+            function alfabet(){
+                var tab = ["A","Ą","B","C","Ć","D","E",
+                           "Ę","F","G","H","I","J","K",
+                           "L","Ł","M","N","Ń","O","Ó",
+                           "P","Q","R","S","Ś","T","U",
+                           "V","W","X","Y","Z","Ź","Ż"];
+                var alfabet = "";
+                for(var i=0;i<35;i++){
+                    alfabet = alfabet + '<div class="literka">'+tab[i]+'</div>';
+                    if((i+1)%5==0){
+                        alfabet = alfabet + '<div class="czysc"></div>';
+                    }
+                }
+                document.getElementById("alfabet").innerHTML=alfabet;
+            }
+        </script>
+	</head>
+	<body>
+		<input type="submit" value="Pokaż alfabet" onclick="alfabet()" />
+        <div id="alfabet"></div>
+	</body>
+</html>
+vat

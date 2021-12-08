@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Walidator hasła</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <script>
+            function sprawdz(form){
+                var haslo=form.haslo.value;
+                var lit=0;
+                for(var i=0;i<haslo.length;i++){
+                    if(parseInt(haslo.charAt(i))==haslo.charAt(i)){
+                        lit++;
+                    }
+                }
+                if(haslo==''){
+                    document.getElementById("wynik").innerHTML="Podaj hasło";
+                    form.haslo.focus();
+                    return false;
+                } else if(haslo.length<=3 || lit==0){
+                    document.getElementById("wynik").innerHTML="Za krótkie lub brak liczby";
+                    form.haslo.focus();
+                    return false;
+                } else if(lit==0){
+                    document.getElementById("wynik").innerHTML="Brak liczby";
+                    form.haslo.focus();
+                    return false;
+                } else {}
+                return true;
+            }
+        </script>
+        <form method="POST" action="plik.html" onsubmit="return sprawdz(this);">
+            Podaj haslo: <input type="password" id="haslo" name="haslo" />
+            <input type="submit" value="Czy haslo jest OK" />
+        </form>
+        <div id="wynik"></div>
+    </body>
+</html>

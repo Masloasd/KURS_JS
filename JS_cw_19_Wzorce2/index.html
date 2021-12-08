@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>wzorce</title>
+		<link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <script>
+            /*
+            ^ - początek wzorca
+            $ - koniec wzorca
+            . - dowolny pojedyńczy znak
+            [...] - dowolny z wymienionych znaków np. [a-z]
+            {3} - trzy poprzedzające znaki np [0-9]{3} - 018
+            {3,} - przynajmniej trzy poprzedzające znaki
+            {2,8} - od 2 do 8 poprzedzających znaków
+            \. znak kropki
+            i - nie uwzględniaj wielkości liter
+            \s - spacja
+            var kod_wzorzec = ': /^[0-9]{2}-[0-9]{3}$/;
+            var nazwisko = /^[a-zA-Z]{2,}\s+[a-zA-Z]{2,}$/i;
+            var email = /^[0-9a-zA-Z_.-]+@[0-9a-zA-Z_.-]+\.[0-9a-zA-Z]{2,3};
+            */
+        </script>
+        <form name="form1" method="post" action="plik.html">
+            <i id="kod_komunikat">Wpisz kod pocztowy w formacie: 11-222 </i>
+            <input type="text" name="kod_pole" /> <br />
+            <i id="nazwisko_komunikat">Wpisz imię i nazwisko </i>
+            <input type="text" name="nazwisko_pole" /> <br />
+            <i id="email_komunikat">Wpisz e-mail w formacie: login@serwis.domena</i>
+            <input type="text" name="email_pole" /> <br />
+            <input type="submit" id="przycisk" value="Sprawdź" />
+        </form>
+        <script>
+            var kod_wzorzec =  /^[0-9]{2}-[0-9]{3}$/;
+            var nazwisko_wzorzec = /^[a-zA-Z]{2,}\s+[a-zA-Z]{2,}$/i;
+            var email_wzorzec  = /^[0-9a-zA-Z_.-]+@+[0-9a-zA-Z_.-]+\.[0-9a-zA-Z]{2,3}$/i;
+            var kod_komunikat = document.getElementById("kod_komunikat");
+            var nazwisko_komunikat = document.getElementById("nazwisko_komunikat");
+            var email_komunikat = document.getElementById("email_komunikat");
+            var form_sprawdz = document.getElementById("przycisk");
+            form_sprawdz.onclick = fun_wzorzec;
+            function fun_wzorzec() {
+                var kod = document.form1.kod_pole.value;
+                var nazwisko = document.form1.nazwisko_pole.value;
+                var email = document.form1.email_pole.value;
+                // var kod = document.forms["form1"]["kod_pole"].value; // zamiennie
+                if (kod == null || kod == "") {
+                    form1.kod_pole.focus();
+                    kod_komunikat.innerHTML = "Brak kodu";
+                    return false;
+                } else if (!kod_wzorzec.test(kod)) {
+                    kod_komunikat.innerHTML = "Kod niepoprawny";
+                    form1.kod_pole.focus();
+                    return false;
+                } else if (nazwisko == null || nazwisko == "") {
+                    nazwisko_komunikat.innerHTML = "Brak imienia i nazwiska";
+                    form1.nazwisko_pole.focus();
+                    return false;
+                } else if (!nazwisko_wzorzec.test(nazwisko)) {
+                    nazwisko_komunikat.innerHTML = "Brak imienia lub nazwiska";
+                    form1.nazwisko_pole.focus();
+                    return false;
+                } else if (email == null || email == "") {
+                    email_komunikat.innerHTML = "Brak e-maila";
+                    form1.email_pole.focus();
+                    return false;
+                } else if (!email_wzorzec.test(email)) {
+                    email_komunikat.innerHTML = "Brak prawidłowego e-maila";
+                    form1.email_pole.focus();
+                    return false;
+                };
+                return true;
+            };
+        </script>
+    </body>
+</html>

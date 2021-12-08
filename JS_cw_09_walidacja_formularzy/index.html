@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>walidacja</title>
+		<link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+      <script>
+        function sprawdz(form){
+            if(form.haslo.value==''){
+                document.getElementById('wynik').innerHTML='Podaj hasło';
+                form.haslo.focus();//focus aktywuje bieżący element
+                return false;
+            } else if(form.haslo.value.length<=3){
+                document.getElementById('wynik').innerHTML='Podaj dłuższe hasło. Trzy znaki to za mało.';
+               form.haslo.focus();
+                return false;
+            } else { //nie puści dopuki nie jest ok
+            }
+            return true;
+            }
+      </script>
+      <form action="plik.html" method="post" onsubmit='return sprawdz(this);'>
+            Podaj hasło: <input type="text" id="haslo" name="haslo" />
+            <input type="submit" value="Wyślij formularz" />
+      </form>
+      <div id="wynik"></div>
+    </body>
+</html>

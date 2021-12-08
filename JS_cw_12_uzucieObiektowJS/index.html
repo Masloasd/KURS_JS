@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Zamówienie auta</title>
+		<link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <script>
+            function pojazd(){
+                auto.marka;
+                auto.model;
+                auto.rocznik;
+                auto.kolor;
+            }
+            function salon(marka,model,rocznik,kolor){
+                this.marka=marka;
+                this.model=model;
+                this.rocznik=rocznik;
+                this.kolor=kolor;
+                this.pojazd=pojazd;
+            };
+            function zamowienie(){
+                var mark = document.getElementById("marka").value;
+                var mode = document.getElementById("model").value;
+                var rok = document.getElementById("rocznik").value;
+                var kolo = document.getElementById("kolor").value;
+                var auto = new salon(mark,mode,rok,kolo);
+                wynik=auto.marka+" "+auto.model+" "+auto.rocznik+" "+auto.kolor;
+                document.getElementById("wynik").innerHTML=wynik;   
+            }
+            </script>
+        Podaj markę pojazdu: <input type="text" id="marka" value="Fiat" /><br /><br />
+        Podaj model pojazdu: <input type="text" id="model" value="Punto" /><br /><br />
+        Podaj rocznik pojazdu: <input type="number" id="rocznik" value="2012" /><br /><br />
+        Podaj kolor pojazdu: <input type="text" id="kolor" value="Szary" /><br /><br />
+        <input type="submit" onclick="zamowienie()" />
+        <div id="wynik"></div>
+    </body>
+</html>

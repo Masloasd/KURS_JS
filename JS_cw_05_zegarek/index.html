@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+	<head>
+		<title>zegarek</title>
+		<meta charset="utf-8" />
+         <link rel="stylesheet" href="style.css" />       
+</head>
+	<body>
+        <script>
+            function czasomierz(){
+                var zegarek = new Date();
+				//document.write(zegarek);
+                var rr = zegarek.getFullYear();
+                var mm = zegarek.getMonth()+1;
+                if(mm<10){
+                    mm= "0" + mm;
+                }
+                var dd = zegarek.getDate();
+                if(dd<10){
+                    dd= "0" + dd;
+                }
+                var godz=zegarek.getHours();
+                if(godz<10){
+                    godz= "0" + godz;
+                }
+                var minuty = zegarek.getMinutes();
+                if(minuty<10){
+                    minuty="0"+minuty;
+                }
+                var sekundy = zegarek.getSeconds();
+                if(sekundy<10){
+                    sekundy="0"+sekundy;
+                }
+                var msekundy= zegarek.getMilliseconds();
+                var dzien = zegarek.getDay();
+                if(dzien==0){dzien="Niedziela";}
+                if(dzien==1){dzien="Poniedziałek";}
+                if(dzien==2){dzien="Wtorek";}
+                if(dzien==3){dzien="Środa";}
+                if(dzien==4){dzien="Czwartek";}
+                if(dzien==5){dzien="Piątek";}
+                if(dzien==6){dzien="Sobota";}
+                document.getElementById("zegar").innerHTML=dzien+" "+rr+"."+mm+"."+dd+" "+godz+":"+minuty+":"+sekundy+" "+msekundy;
+                setTimeout("czasomierz()",10);
+            }
+            window.onload=czasomierz;
+        </script>
+        <div id="zegar"></div>
+	</body>
+</html>
+

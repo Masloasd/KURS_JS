@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Zamówienie auta</title>
+		<link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <script>
+            function doPrzycisku(){
+                var usun='<input type="button" value="usuń" onclick="usun()" />';
+                document.getElementById("wynik").innerHTML="Button zadziałał możesz go teraz usunąć "+ usun;
+            }
+            function usun(){
+                document.getElementById("form1").innerHTML='';
+            }
+            function liczba(){
+                var x=document.getElementById("l1").value;
+                document.getElementById("wynik").innerHTML = x+" to jest liczba";
+            }
+
+        </script>
+            <button type="submit"onclick="doPrzycisku()" >Przycisk button</button>
+            <input type="button" value="Przycisk input" onclick="doPrzycisku()" /><br />
+            Wpisz tekst <input type="text" id="tekst1" />
+            <input type="number" step="0.1" id="l1" />
+            <input type="submit" value="sprawdż liczbę" onclick="liczba()" /> 
+           <input type="reset" value="Wyczyść formularz" />
+        <div id="wynik"></div>
+    </body>
+</html>

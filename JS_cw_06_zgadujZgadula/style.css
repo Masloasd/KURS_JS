@@ -1,0 +1,36 @@
+body{
+	background-color: #888888;
+	color: #00ff00;
+    margin:0;
+}
+#powitanie{
+    font-family: Arial;
+    font-size: 20px;
+    text-align: center;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #444444;
+    min-height: 180px;
+    line-height: 50px;
+}
+#kontener{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 450px;
+    background-color: #444444;
+}
+#los{
+    float: left;
+    width: 44%;
+    font-family: Arial;
+    font-size: 20px;
+    padding-left: 20px;
+}
+#gra{
+    float: left;
+    width: 54%;
+    font-family: Arial;
+    font-size: 20px;
+}

@@ -1,0 +1,17 @@
+body{
+	margin-top:10px;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+	width:100%;
+    background-color: gray;
+}
+#anime{
+    background-color: green;
+    position: absolute;
+    left: 300px;
+    float: left;
+    color: orange;
+    width: 250px;
+    /*height: 250px;*/
+}
