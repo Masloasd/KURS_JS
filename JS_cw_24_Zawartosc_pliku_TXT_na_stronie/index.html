@@ -1,4 +1,3 @@
-<!-- potrzebny plik tekstowy plik.txt -->
 <!DOCTYPE html>
 <html>
 	<head>
@@ -9,20 +8,10 @@
             <script>
                 window.onload = function () {
                     var x = 'plik.txt';
-                    document.getElementById('wynik').src = "<p>"+x+"</p>";
-                }
-            </script>
-
-            <script>
-                function tekst() {
-                    var y = document.getElementById('wynik').value;
-                    document.getElementById('wynik2').innerHTML = y;
+                    document.getElementById('wynik').src = x;
                 }
             </script>
             <iframe id="wynik"></iframe><br />
-            <input type="submit" onclick="tekst();" value="Wyświetl tekst" />
-
-            <div id="wynik2"></div>
         </section>
 	</body>
 </html>
