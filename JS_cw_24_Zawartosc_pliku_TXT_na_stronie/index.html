@@ -1,16 +1,28 @@
+<!-- potrzebny plik tekstowy plik.txt -->
 <!DOCTYPE html>
 <html>
 	<head>
-
+		<meta charset="utf-8" />
 	</head>
 	<body>
-		<section>
-			<script>
-				window.onload = function(){
-					document.getElementById('wynik').src = 'plik.txt';
-				}
-			</script>
-			<iframe id="wynik"></iframe>
-		</section>
+        <section>
+            <script>
+                window.onload = function () {
+                    var x = 'plik.txt';
+                    document.getElementById('wynik').src = "<p>"+x+"</p>";
+                }
+            </script>
+
+            <script>
+                function tekst() {
+                    var y = document.getElementById('wynik').value;
+                    document.getElementById('wynik2').innerHTML = y;
+                }
+            </script>
+            <iframe id="wynik"></iframe><br />
+            <input type="submit" onclick="tekst();" value="Wyświetl tekst" />
+
+            <div id="wynik2"></div>
+        </section>
 	</body>
 </html>
