@@ -1,41 +1,49 @@
+<!--
+Treść zadania:
+    Jasio ma imieniny. Tradycją w szkole jest przyniesienie cukierków i rozdanie ich uczniom w swojej klasie. Mama kupiła Jasiowi duży zapas cukierków. Ma on za zadanie rozdać je w klasie w taki sposób, aby każdy uczeń dostał ich jak największą, ale taką samą ilość jak pozostali przy czym dziewczynki dostają jeden cukierek mniej niż chłopcy. Za to Jasiu bardzo libi panią nauczycielkę i postanowił że ona dostanie dwa cukierki przy każdym, rozdaniu, czyli będzie miała cukierków dwa razy więcej niż dziewczynki.
+    Jeżeli zostaną jakieś cukierki i nie wystarczy ich już na kolejne rozdanie każdemu po jednym - wtedy wszystkie pozostałe zostają dla Jasia.
+    Znając dowolną ilość cukierków i ilość uczniów w klasie napisz program wyliczający:
+    1. po ile cukierków musi dać Jasio każdemu uczniowi z rozróżnieniem na koleżanki i kolegów oraz panią wychowawczynię?
+    2.Ile ich ewentualnie zostanie dla Jasia ?
+-->
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<meta charset="UTF-8" />
-		<title>Jasiu</title>
-		<link rel="stylesheet" href="style.css" />
-    </head>
-    <body>
-        <center><h2>Cukierki urodzinowe Jasia</h2></center>
-        <script>
-            function oblicz(){
-                var cukierki;
-                var pani;
-                var chlopcy;
-                var klasa;
-                var dziewczyny;
-                var jasiu=1;
-                klasa=document.getElementById("klasa").value*1;
-                pani=document.getElementById("pani").value*1;
-                chlopcy=document.getElementById("chlopcy").value*1;
-                cukierki=document.getElementById("cukierki").value*1;
-                dziewczyny=klasa-chlopcy; 
-                let minimum = (dziewczyny+(chlopcy+1)+pani+jasiu);
-                let uczniowie=klasa-jasiu;
-                let wynik=(cukierki-minimum)%uczniowie;
-                document.getElementById("wynik").innerHTML = wynik;
-            }
-        </script>
-        
-        Podaj ilość uczniów w klasie Jasia: 
-            <input type="number" id="klasa" /><br /><br />
-        Ile cukierków ma dostać Pani Jasia? 
-            <input type="number" id="pani" /><br /><br />
-        Ilu chłopców jest w klasie Jasia? 
-            <input type="number" id="chlopcy" /> <br /><br />
-        Ile cukierków Jasiu ma do rozdania? 
-            <input type="number" id="cukierki" /><br /><br />
-        <input type="submit" value="Oblicz ile cukierków zostanie dla Jasia" onclick="oblicz()" />
-        <div id="wynik"></div>
-    </body>
+<head>
+    <meta charset="UTF-8" />
+    <title>Jasiu</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <center><h2>Cukierki urodzinowe Jasia</h2></center>
+    <script>
+        function oblicz() {
+            var cukierki;
+            var pani;
+            var chlopcy;
+            var klasa;
+            var dziewczyny;
+            var jasiu = 1;
+            klasa = document.getElementById("klasa").value * 1;
+            pani = document.getElementById("pani").value * 1;
+            chlopcy = document.getElementById("chlopcy").value * 1;
+            cukierki = document.getElementById("cukierki").value * 1;
+            dziewczyny = klasa - chlopcy;
+            let minimum = (dziewczyny + (chlopcy + 1) + pani + jasiu);
+            let uczniowie = klasa - jasiu;
+            let wynik = (cukierki - minimum) % uczniowie;
+            document.getElementById("wynik").innerHTML = wynik;
+        }
+    </script>
+
+    Podaj ilość uczniów w klasie Jasia:
+    <input type="number" id="klasa" /><br /><br />
+    Ile cukierków ma dostać Pani Jasia?
+    <input type="number" id="pani" /><br /><br />
+    Ilu chłopców jest w klasie Jasia?
+    <input type="number" id="chlopcy" /> <br /><br />
+    Ile cukierków Jasiu ma do rozdania?
+    <input type="number" id="cukierki" /><br /><br />
+    <input type="submit" value="Oblicz ile cukierków zostanie dla Jasia" onclick="oblicz()" />
+    <div id="wynik"></div>
+</body>
 </html>
